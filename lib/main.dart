@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smallscaleflutterproject/widget/custom_button_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -101,21 +102,107 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 30,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 55),
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(45),
+                CustomButtonWidget(
+                  text: 'Transfer',
+                  backgroundColor: Colors.amber,
+                  textColor: Colors.black,
+                ),
+                CustomButtonWidget(
+                  text: 'Request',
+                  backgroundColor: const Color(0xFF1F2123),
+                  textColor: Colors.white,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Wallets',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 36,
+                    fontWeight: FontWeight.w600,
                   ),
-                  child: Text(
-                    'Transfer',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
+                ),
+                Text(
+                  'View all',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFF1F2123),
+                borderRadius: BorderRadius.circular(25),
+              ),
+              clipBehavior: Clip.hardEdge,
+              child: Padding(
+                padding: const EdgeInsets.all(30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Euro',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '6 428',
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              'EUR',
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white.withOpacity(0.8),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Transform.scale(
+                      scale: 2.2,
+                      child: Transform.translate(
+                        offset: Offset(4, 12),
+                        child: Icon(
+                          Icons.euro_rounded,
+                          color: Colors.white,
+                          size: 88,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
