@@ -36,10 +36,11 @@ class _PomodoroScreenState extends State<PomodoroScreen> {
   }
 
   void _onPausePressed() {
+    _timer.cancel();
+
     setState(() {
       _isRunning = false;
     });
-    _timer.cancel();
   }
 
   void _stopPressed() {
