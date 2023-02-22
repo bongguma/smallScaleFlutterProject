@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smallscaleflutterproject/ui_challenge/screen/card_list_screen.dart';
 import 'package:smallscaleflutterproject/pomodoro/screen/pomodoro_screen.dart';
+import 'package:smallscaleflutterproject/webtoon/screen/webtoon_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/cardList': (context) => CardListScreen(),
         '/pomodoro': (context) => PomodoroScreen(),
+        '/webtoon': (context) => WebtoonListScreen(),
       },
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -70,6 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.pushNamed(context, '/pomodoro');
             },
             child: Text('POMODORO'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/webtoon');
+            },
+            child: Text('WEBTOON'),
           ),
         ],
       ),
