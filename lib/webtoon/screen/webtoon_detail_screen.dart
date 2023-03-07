@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smallscaleflutterproject/webtoon/models/webtoon_model.dart';
 
 class WebtoonDetailScreen extends StatelessWidget {
-  final WebtoonModel webtoon;
+
+  final WebtoonModel webtoon = Get.arguments as WebtoonModel;
 
   WebtoonDetailScreen({
     Key? key,
-    required this.webtoon,
   }) : super(key: key);
 
   @override
@@ -16,8 +17,8 @@ class WebtoonDetailScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.green,
         title: Text(
-          '${webtoon.title}',
-          style: TextStyle(
+          webtoon.title,
+          style: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.w400,
           ),
@@ -26,7 +27,7 @@ class WebtoonDetailScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

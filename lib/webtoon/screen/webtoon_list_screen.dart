@@ -66,7 +66,7 @@ class WebtoonListScreen extends StatelessWidget {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: webtoonList.length,  /// [hasData]가 [true]일 경우에만 반환하므로 [null] 보증 (!)
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       itemBuilder: (context, index) {
         var webtoon = webtoonList[index];
         return WebtoonCardWidget(webtoon: webtoon);
