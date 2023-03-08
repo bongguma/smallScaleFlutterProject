@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smallscaleflutterproject/webtoon/models/webtoon_model.dart';
 import 'package:smallscaleflutterproject/webtoon/screen/webtoon_detail_screen.dart';
 
@@ -14,13 +15,7 @@ class WebtoonCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => WebtoonDetailScreen(webtoon: webtoon),
-            fullscreenDialog: true,
-          ),
-        );
+        Get.toNamed('/webtoonDetail', arguments: webtoon);
       },
       child: Column(
         children: [
@@ -48,12 +43,12 @@ class WebtoonCardWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
             webtoon.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
             ),
           ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smallscaleflutterproject/ui_challenge/screen/card_list_screen.dart';
 import 'package:smallscaleflutterproject/pomodoro/screen/pomodoro_screen.dart';
+import 'package:smallscaleflutterproject/webtoon/screen/webtoon_detail_screen.dart';
 import 'package:smallscaleflutterproject/webtoon/screen/webtoon_list_screen.dart';
 
 void main() {
@@ -10,10 +12,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      initialRoute: '/',
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -25,11 +28,12 @@ class MyApp extends StatelessWidget {
         ),
         cardColor: Colors.white,
       ),
-      routes: {
-        '/cardList': (context) => CardListScreen(),
-        '/pomodoro': (context) => PomodoroScreen(),
-        '/webtoon': (context) => WebtoonListScreen(),
-      },
+      getPages: [
+        GetPage(name: '/cardList', page: () => CardListScreen()),
+        GetPage(name: '/pomodoro', page: () => PomodoroScreen()),
+        GetPage(name: '/webtoon', page: () => WebtoonListScreen()),
+        GetPage(name: '/webtoonDetail', page: () => WebtoonDetailScreen()),
+      ],
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -46,13 +50,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,19 +60,19 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/cardList');
+              Get.toNamed('/cardList');
             },
             child: Text('UI CHALLENGE'),
           ),
           TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/pomodoro');
+              Get.toNamed('/pomodoro');
             },
             child: Text('POMODORO'),
           ),
           TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/webtoon');
+              Get.toNamed('/webtoon');
             },
             child: Text('WEBTOON'),
           ),
