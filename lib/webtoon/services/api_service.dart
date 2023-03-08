@@ -15,7 +15,6 @@ class ApiService extends GetxController {
   /// [onInit]은 [GetxController]가 생성될 때, 자동으로 실행되는 함수
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
 
     getTodaysToons();
@@ -24,14 +23,12 @@ class ApiService extends GetxController {
   /// [onReady]는 [GetxController]가 생성되고, [onInit]이 실행된 후에 실행되는 함수
   @override
   void onReady() {
-    // TODO: implement onReady
     super.onReady();
   }
 
   /// [onClose]는 [GetxController]가 종료될 때, 자동으로 실행되는 함수
   @override
   void onClose() {
-    // TODO: implement onClose
     super.onClose();
   }
 
