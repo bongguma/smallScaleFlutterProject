@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class WebtoonModel {
   final String title;
   final String thumb;
