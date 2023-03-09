@@ -37,6 +37,7 @@ dependencies:
   intl: ^0.18.0
   http: ^0.13.5
   get: ^4.6.5
+  flutter_naver_login: ^1.7.0
 
 dev_dependencies:
   flutter_test:
