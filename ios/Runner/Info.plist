@@ -43,5 +43,35 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSBonjourServices</key>
+    <array>
+        <string>_dartobservatory._tcp</string>
+    </array>
+    <key>naverConsumerKey</key>
+    <string>dvmjODtzsR8krNcMbCIb</string>
+    <key>naverConsumerSecret</key>
+    <string>eSR6mJD5wZ</string>
+    <key>naverServiceAppName</key>
+    <string>smallScaleFlutterProject</string>
+    <key>naverServiceAppUrlScheme</key>
+    <string>naver</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>naversearchapp</string>
+        <string>naversearchthirdlogin</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>naver</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>naver</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>
