@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_naver_login/flutter_naver_login.dart';
 import 'package:get/get.dart';
 import 'package:smallscaleflutterproject/ui_challenge/screen/card_list_screen.dart';
 import 'package:smallscaleflutterproject/pomodoro/screen/pomodoro_screen.dart';
@@ -75,6 +76,21 @@ class _MyHomePageState extends State<MyHomePage> {
               Get.toNamed('/webtoon');
             },
             child: Text('WEBTOON'),
+          ),
+          TextButton(
+            onPressed: () async {
+              print('naver Login');
+              NaverLoginResult _result = await FlutterNaverLogin.logIn();
+              // await FlutterNaverLogin.logOut();
+              print(_result.status);
+              print(_result.errorMessage);
+              print(_result.accessToken);
+              String _id = _result.account.id;
+              String _email = _result.account.email;
+
+              print('$_id, $_email');
+            },
+            child: Text('Naver Login'),
           ),
         ],
       ),
